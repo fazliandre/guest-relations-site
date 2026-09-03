@@ -42,6 +42,5 @@ of date, so always commit the regenerated HTML alongside a change to
 This repository is public because GitHub Pages does not serve private
 repositories on the free plan.
 
-It holds **only** the site. The paid product — the Guest Communication Library
-and the script that generates it — stays in the private repository
-`fazliandre/guest-relations-system` and must never be added here.
+It holds **only** the site. The paid product and the script that generates it
+stay in a separate private repository and must never be added here.
