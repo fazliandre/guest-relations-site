@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guest Recognition: How to Remember Regulars and Special Occasions</title>
+<meta name="description" content="A simple system for guest recognition in hospitality: record the small things, greet regulars by name and preference, and catch birthdays and anniversaries.">
+<link rel="canonical" href="https://fazliandre.github.io/guest-relations-site/guest-recognition.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Guest Recognition: How to Remember Regulars and Special Occasions">
+<meta property="og:description" content="A simple system for guest recognition in hospitality: record the small things, greet regulars by name and preference, and catch birthdays and anniversaries.">
+<meta property="og:url" content="https://fazliandre.github.io/guest-relations-site/guest-recognition.html">
+<meta property="og:site_name" content="The Guest Relations System">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:only light;
+  
+  --paper:#fbfaf7;--ink:#191a1c;--muted:#5a5d63;--faint:#8a8d93;
+  --accent:#1c3d5a;--accent-2:#0f2537;--line:#e6e2da;--fill:#f2efe9;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:#fbfaf7 !important;}
+body{background:#fbfaf7 !important;color:#191a1c !important;
+  font-family:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+  font-size:19px;line-height:1.72;-webkit-font-smoothing:antialiased;}
+a{color:var(--accent)}
+.masthead,.wrap,.hero,.articles,.home-cta,.home-foot,footer,section,article,div{background-color:transparent}
+.masthead{background:#fbfaf7 !important}
+.wrap,.hero,.articles,.home-cta,.home-foot{background:#fbfaf7 !important}
+h1,h2,h3,h4,p,li,span{color:inherit}
+.cta,.cta *{color:#eef2f6}
+.cta h3{color:#fff}
+.cta .btn{color:#0f2537}
+.takeaway{background:#ffffff !important}
+
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:8px;top:8px;background:#fff;padding:8px 12px;z-index:10;border-radius:3px}
+
+/* header */
+.masthead{border-bottom:1px solid var(--line);padding:18px 28px;background:var(--paper);}
+.masthead-inner{max-width:820px;margin:0 auto;display:flex;align-items:center;
+  justify-content:space-between;gap:20px;}
+.brand{font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--accent);text-decoration:none;}
+.nav{font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;letter-spacing:0.02em}
+.nav:hover{color:var(--accent)}
+
+.wrap{max-width:720px;margin:0 auto;padding:60px 28px 96px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--faint);margin-bottom:20px;}
+h1{font-family:'IBM Plex Serif',Georgia,serif;font-weight:600;font-size:43px;
+  line-height:1.14;letter-spacing:-0.015em;margin-bottom:24px;}
+.lede{font-size:22px;line-height:1.5;margin-bottom:14px}
+.lede-2{font-size:20px;color:var(--muted)}
+.rule{width:52px;height:2px;background:var(--accent);margin:38px 0 0}
+h2{font-family:'IBM Plex Serif',serif;font-weight:600;font-size:26px;
+  line-height:1.25;margin:52px 0 6px;}
+.step-label{font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--accent);display:block;margin-bottom:10px;}
+p{margin-bottom:18px;color:#26282b}
+.script{background:var(--fill);border-left:3px solid var(--accent);padding:18px 22px;
+  margin:22px 0;font-style:italic;color:#33363a;font-size:18px;line-height:1.6;border-radius:2px;}
+.script-label{display:block;font-style:normal;font-size:11px;font-weight:600;
+  letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;}
+hr{border:none;border-top:1px solid var(--line);margin:62px 0}
+
+/* takeaway box */
+.takeaway{border:1px solid var(--line);border-radius:5px;padding:26px 28px;margin:50px 0 0;background:#fff}
+.takeaway .eyebrow{margin-bottom:14px}
+.takeaway ul{list-style:none;margin:0}
+.takeaway li{position:relative;padding-left:22px;margin-bottom:10px;font-size:18px;color:#26282b}
+.takeaway li:last-child{margin-bottom:0}
+.takeaway li:before{content:"";position:absolute;left:0;top:12px;width:8px;height:2px;background:var(--accent)}
+
+/* cta */
+.cta{background:var(--accent);border-radius:6px;padding:38px 36px;color:#eef2f6;}
+.cta .eyebrow{color:#9bb4c9;margin-bottom:14px}
+.cta h3{font-family:'IBM Plex Serif',serif;font-weight:600;font-size:25px;
+  margin-bottom:12px;color:#fff;line-height:1.25;}
+.cta p{color:#cdd8e2;font-size:17px;margin-bottom:22px}
+.btn{display:inline-block;font-size:13px;font-weight:600;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--accent-2);background:#fff;padding:14px 28px;
+  border-radius:4px;text-decoration:none;}
+.btn:hover{background:#f0f0ec}
+.btn-solid{color:#fff;background:var(--accent)}
+.btn-solid:hover{background:var(--accent-2)}
+
+/* related */
+.related{margin-top:58px}
+.related .eyebrow{margin-bottom:16px}
+.related a{display:block;text-decoration:none;color:inherit;border-top:1px solid var(--line);
+  padding:18px 0;transition:padding-left .15s ease}
+.related a:hover{padding-left:6px}
+.related a:last-child{border-bottom:1px solid var(--line)}
+.related h4{font-family:'IBM Plex Serif',serif;font-weight:500;font-size:19px;color:var(--ink)}
+
+footer{border-top:1px solid var(--line);margin-top:56px;padding-top:26px;
+  color:var(--faint);font-size:14px}
+footer a{color:var(--faint)}
+
+/* home */
+.hero{max-width:820px;margin:0 auto;padding:84px 28px 38px}
+.hero h1{font-size:52px;line-height:1.1;letter-spacing:-0.02em;max-width:16ch}
+.hero .sub{font-size:22px;line-height:1.5;color:var(--muted);max-width:56ch;margin-bottom:32px}
+.trust{font-size:15px;color:var(--faint);margin-top:20px}
+.home-rule{max-width:820px;margin:0 auto}
+.articles{max-width:820px;margin:0 auto;padding:60px 28px 36px}
+.sec{font-family:'IBM Plex Sans',sans-serif;font-weight:600;font-size:12px;
+  letter-spacing:0.2em;text-transform:uppercase;color:var(--faint)}
+.list{border-top:1px solid var(--line);margin-top:24px}
+a.item{display:block;text-decoration:none;color:inherit;border-bottom:1px solid var(--line);
+  padding:26px 0;transition:padding-left .15s ease}
+a.item:hover{padding-left:8px}
+a.item h3{font-family:'IBM Plex Serif',serif;font-weight:500;font-size:23px;margin-bottom:6px}
+a.item p{font-size:17px;color:var(--muted);max-width:60ch;margin-bottom:0}
+a.item .go{font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--accent);margin-top:10px;display:inline-block}
+.home-cta{max-width:820px;margin:36px auto 0;padding:0 28px}
+.home-foot{max-width:820px;margin:0 auto;padding:0 28px 40px}
+
+@media(max-width:600px){
+  body{font-size:18px}
+  h1{font-size:33px}
+  .hero h1{font-size:35px}
+  .lede{font-size:20px}
+  .hero .sub{font-size:19px}
+  .wrap{padding:42px 22px 76px}
+  .hero{padding:52px 22px 30px}
+  .cta{padding:30px 26px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="masthead"><div class="masthead-inner">
+  <a class="brand" href="index.html">The Guest Relations System</a>
+  <a class="nav" href="index.html">All field notes</a>
+</div></div>
+<article class="wrap" id="main">
+  <p class="eyebrow">Field Notes</p>
+  <h1>How to Remember Your Regulars</h1>
+  <p class="lede">The guest who feels known does not compare you on price. Recognition is the cheapest loyalty you will ever build, and most venues leave it on the table.</p>
+  <p class="lede-2">Here is how to turn being remembered into a system, not a lucky habit.</p>
+  <div class="rule"></div>
+  <h2><span class="step-label">Why</span>Being remembered is the whole product</h2>
+  <p>Guests can get a good drink almost anywhere. What they cannot get anywhere is the feeling of walking in and being known. That feeling is the most valuable thing your venue sells, and it is almost free to give.</p>
+  <p>Recognition is not about grand gestures. It is a system for remembering small things and using them at the right moment.</p>
+  <h2><span class="step-label">How</span>Write down the small things</h2>
+  <p>The magic is not memory, it is a note. When a regular mentions a birthday, a favourite table, a drink they love, the name of a partner, record it on their profile. Then your team can appear to remember effortlessly.</p>
+  <div class="script"><span class="script-label">What to say</span>Welcome back, Mr Tan. Your usual table by the window is ready, and shall I start you with the Negroni?</div>
+  <p>To the guest this feels like being cared for. To you it is simply a note read thirty seconds before they arrived.</p>
+  <h2><span class="step-label">When</span>Catch the occasions</h2>
+  <p>Birthdays, anniversaries, first visits, and returns after a long gap are all moments to mark. They cost little and they are exactly what guests tell their friends about afterwards.</p>
+  <p>Flag them in advance so nothing depends on someone happening to remember in the moment. A quiet card, a small gesture, a line of acknowledgement, timed right, buys years of loyalty.</p>
+  <h2><span class="step-label">The point</span>Loyalty is built, not bought</h2>
+  <p>Discount schemes buy visits. Recognition buys attachment. A guest who feels known does not shop around on price, because no one else knows them the way you do. That is the cheapest and strongest hold a venue can have.</p>
+
+  <div class="takeaway">
+    <p class="eyebrow">In short</p>
+    <ul><li>Recognition is a note taken, not a memory trusted.</li><li>Record preferences, occasions, and names on the guest profile.</li><li>Read the profile shortly before the guest arrives.</li><li>Flag birthdays and anniversaries in advance, never on the night.</li><li>Recognition buys attachment where discounts only buy visits.</li></ul>
+  </div>
+  <hr>
+  <section class="cta">
+    <p class="eyebrow">From the full system</p>
+    <h3>This is one of twelve modules.</h3>
+    <p>The recognition module this is drawn from includes the guest record and occasion system in full. It is one part of the Guest Relations System.</p>
+    <a class="btn" href="#">Get the full pack</a>
+  </section>
+  <section class="related">
+    <p class="eyebrow">Read next</p>
+    <a href="no-show-guests.html"><h4>How to handle a guest no-show</h4></a>
+    <a href="difficult-guest.html"><h4>How to handle a difficult guest</h4></a>
+    <a href="service-recovery.html"><h4>How to recover a guest after something goes wrong</h4></a>
+
+  </section>
+  <footer>The Guest Relations System &middot; Written for hotels, clubs, and restaurants. &middot; <a href="index.html">All field notes</a></footer>
+</article>
+</body>
+</html>

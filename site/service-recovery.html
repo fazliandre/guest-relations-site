@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service Recovery: How to Fix a Bad Guest Experience</title>
+<meta name="description" content="A simple service recovery process for hospitality: own it, fix it, follow up, and match the gesture to the mistake without giving away the venue.">
+<link rel="canonical" href="https://fazliandre.github.io/guest-relations-site/service-recovery.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Service Recovery: How to Fix a Bad Guest Experience">
+<meta property="og:description" content="A simple service recovery process for hospitality: own it, fix it, follow up, and match the gesture to the mistake without giving away the venue.">
+<meta property="og:url" content="https://fazliandre.github.io/guest-relations-site/service-recovery.html">
+<meta property="og:site_name" content="The Guest Relations System">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:only light;
+  
+  --paper:#fbfaf7;--ink:#191a1c;--muted:#5a5d63;--faint:#8a8d93;
+  --accent:#1c3d5a;--accent-2:#0f2537;--line:#e6e2da;--fill:#f2efe9;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:#fbfaf7 !important;}
+body{background:#fbfaf7 !important;color:#191a1c !important;
+  font-family:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+  font-size:19px;line-height:1.72;-webkit-font-smoothing:antialiased;}
+a{color:var(--accent)}
+.masthead,.wrap,.hero,.articles,.home-cta,.home-foot,footer,section,article,div{background-color:transparent}
+.masthead{background:#fbfaf7 !important}
+.wrap,.hero,.articles,.home-cta,.home-foot{background:#fbfaf7 !important}
+h1,h2,h3,h4,p,li,span{color:inherit}
+.cta,.cta *{color:#eef2f6}
+.cta h3{color:#fff}
+.cta .btn{color:#0f2537}
+.takeaway{background:#ffffff !important}
+
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:8px;top:8px;background:#fff;padding:8px 12px;z-index:10;border-radius:3px}
+
+/* header */
+.masthead{border-bottom:1px solid var(--line);padding:18px 28px;background:var(--paper);}
+.masthead-inner{max-width:820px;margin:0 auto;display:flex;align-items:center;
+  justify-content:space-between;gap:20px;}
+.brand{font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--accent);text-decoration:none;}
+.nav{font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;letter-spacing:0.02em}
+.nav:hover{color:var(--accent)}
+
+.wrap{max-width:720px;margin:0 auto;padding:60px 28px 96px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--faint);margin-bottom:20px;}
+h1{font-family:'IBM Plex Serif',Georgia,serif;font-weight:600;font-size:43px;
+  line-height:1.14;letter-spacing:-0.015em;margin-bottom:24px;}
+.lede{font-size:22px;line-height:1.5;margin-bottom:14px}
+.lede-2{font-size:20px;color:var(--muted)}
+.rule{width:52px;height:2px;background:var(--accent);margin:38px 0 0}
+h2{font-family:'IBM Plex Serif',serif;font-weight:600;font-size:26px;
+  line-height:1.25;margin:52px 0 6px;}
+.step-label{font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--accent);display:block;margin-bottom:10px;}
+p{margin-bottom:18px;color:#26282b}
+.script{background:var(--fill);border-left:3px solid var(--accent);padding:18px 22px;
+  margin:22px 0;font-style:italic;color:#33363a;font-size:18px;line-height:1.6;border-radius:2px;}
+.script-label{display:block;font-style:normal;font-size:11px;font-weight:600;
+  letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;}
+hr{border:none;border-top:1px solid var(--line);margin:62px 0}
+
+/* takeaway box */
+.takeaway{border:1px solid var(--line);border-radius:5px;padding:26px 28px;margin:50px 0 0;background:#fff}
+.takeaway .eyebrow{margin-bottom:14px}
+.takeaway ul{list-style:none;margin:0}
+.takeaway li{position:relative;padding-left:22px;margin-bottom:10px;font-size:18px;color:#26282b}
+.takeaway li:last-child{margin-bottom:0}
+.takeaway li:before{content:"";position:absolute;left:0;top:12px;width:8px;height:2px;background:var(--accent)}
+
+/* cta */
+.cta{background:var(--accent);border-radius:6px;padding:38px 36px;color:#eef2f6;}
+.cta .eyebrow{color:#9bb4c9;margin-bottom:14px}
+.cta h3{font-family:'IBM Plex Serif',serif;font-weight:600;font-size:25px;
+  margin-bottom:12px;color:#fff;line-height:1.25;}
+.cta p{color:#cdd8e2;font-size:17px;margin-bottom:22px}
+.btn{display:inline-block;font-size:13px;font-weight:600;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--accent-2);background:#fff;padding:14px 28px;
+  border-radius:4px;text-decoration:none;}
+.btn:hover{background:#f0f0ec}
+.btn-solid{color:#fff;background:var(--accent)}
+.btn-solid:hover{background:var(--accent-2)}
+
+/* related */
+.related{margin-top:58px}
+.related .eyebrow{margin-bottom:16px}
+.related a{display:block;text-decoration:none;color:inherit;border-top:1px solid var(--line);
+  padding:18px 0;transition:padding-left .15s ease}
+.related a:hover{padding-left:6px}
+.related a:last-child{border-bottom:1px solid var(--line)}
+.related h4{font-family:'IBM Plex Serif',serif;font-weight:500;font-size:19px;color:var(--ink)}
+
+footer{border-top:1px solid var(--line);margin-top:56px;padding-top:26px;
+  color:var(--faint);font-size:14px}
+footer a{color:var(--faint)}
+
+/* home */
+.hero{max-width:820px;margin:0 auto;padding:84px 28px 38px}
+.hero h1{font-size:52px;line-height:1.1;letter-spacing:-0.02em;max-width:16ch}
+.hero .sub{font-size:22px;line-height:1.5;color:var(--muted);max-width:56ch;margin-bottom:32px}
+.trust{font-size:15px;color:var(--faint);margin-top:20px}
+.home-rule{max-width:820px;margin:0 auto}
+.articles{max-width:820px;margin:0 auto;padding:60px 28px 36px}
+.sec{font-family:'IBM Plex Sans',sans-serif;font-weight:600;font-size:12px;
+  letter-spacing:0.2em;text-transform:uppercase;color:var(--faint)}
+.list{border-top:1px solid var(--line);margin-top:24px}
+a.item{display:block;text-decoration:none;color:inherit;border-bottom:1px solid var(--line);
+  padding:26px 0;transition:padding-left .15s ease}
+a.item:hover{padding-left:8px}
+a.item h3{font-family:'IBM Plex Serif',serif;font-weight:500;font-size:23px;margin-bottom:6px}
+a.item p{font-size:17px;color:var(--muted);max-width:60ch;margin-bottom:0}
+a.item .go{font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--accent);margin-top:10px;display:inline-block}
+.home-cta{max-width:820px;margin:36px auto 0;padding:0 28px}
+.home-foot{max-width:820px;margin:0 auto;padding:0 28px 40px}
+
+@media(max-width:600px){
+  body{font-size:18px}
+  h1{font-size:33px}
+  .hero h1{font-size:35px}
+  .lede{font-size:20px}
+  .hero .sub{font-size:19px}
+  .wrap{padding:42px 22px 76px}
+  .hero{padding:52px 22px 30px}
+  .cta{padding:30px 26px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="masthead"><div class="masthead-inner">
+  <a class="brand" href="index.html">The Guest Relations System</a>
+  <a class="nav" href="index.html">All field notes</a>
+</div></div>
+<article class="wrap" id="main">
+  <p class="eyebrow">Field Notes</p>
+  <h1>How to Recover a Guest After Something Goes Wrong</h1>
+  <p class="lede">Things go wrong in every venue. What separates the good ones is not that they never slip, it is what they do in the ninety seconds afterwards.</p>
+  <p class="lede-2">Here is the recovery process, plainly, so anyone on your team can run it.</p>
+  <div class="rule"></div>
+  <h2><span class="step-label">The rule</span>Speed beats size</h2>
+  <p>When something goes wrong, how fast you respond matters far more than how much you give. A guest whose problem is solved in two minutes remembers a good night. A guest who waits twenty for a free dessert remembers the wait.</p>
+  <p>Move first, decide the gesture second. The apology and the fix should reach them before they have to ask twice.</p>
+  <h2><span class="step-label">The shape</span>Own it, fix it, follow up</h2>
+  <p>Every recovery has the same three beats. Own the problem without excuses. Fix it plainly. Then check back once more so the last thing they feel is care, not the mistake.</p>
+  <div class="script"><span class="script-label">What to say</span>I am so sorry about that, it is on us. I am bringing you a fresh one right now, and I will come back in a moment to make sure it is right.</div>
+  <p>The follow-up is the part most venues skip, and it is the part guests remember. It turns a fumble into a story about how well you looked after them.</p>
+  <h2><span class="step-label">The line</span>Generous, not guilty</h2>
+  <p>Match the gesture to the size of the wrong. A small slip earns a sincere apology and a quick fix. A ruined occasion earns something real. Giving away too much for a minor issue trains guests to complain and unsettles your team.</p>
+  <p>Decide these tiers in advance, so your staff know what they are allowed to offer without finding a manager. Confidence in the moment is worth more than any single free item.</p>
+  <h2><span class="step-label">After</span>Write it down</h2>
+  <p>Note what went wrong and how you handled it on the guest's record. A one-off is nothing. A repeat is a signal, either about a guest to watch or, more often, about something in your own operation quietly costing you goodwill.</p>
+
+  <div class="takeaway">
+    <p class="eyebrow">In short</p>
+    <ul><li>Respond fast. Speed matters more than the size of the gesture.</li><li>Own it, fix it, then come back once more to check.</li><li>Match what you give to the size of the mistake.</li><li>Set the tiers in advance so staff can act without a manager.</li><li>Record it, because repeats point at your operation, not the guest.</li></ul>
+  </div>
+  <hr>
+  <section class="cta">
+    <p class="eyebrow">From the full system</p>
+    <h3>This is one of twelve modules.</h3>
+    <p>The recovery process above is a single part of the Guest Relations System, a complete set of hospitality scripts and procedures you can drop straight into your venue.</p>
+    <a class="btn" href="#">Get the full pack</a>
+  </section>
+  <section class="related">
+    <p class="eyebrow">Read next</p>
+    <a href="no-show-guests.html"><h4>How to handle a guest no-show</h4></a>
+    <a href="difficult-guest.html"><h4>How to handle a difficult guest</h4></a>
+    <a href="reply-to-bad-review.html"><h4>How to reply to a bad Google review</h4></a>
+
+  </section>
+  <footer>The Guest Relations System &middot; Written for hotels, clubs, and restaurants. &middot; <a href="index.html">All field notes</a></footer>
+</article>
+</body>
+</html>

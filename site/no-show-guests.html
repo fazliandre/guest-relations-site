@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Handle a Guest No-Show (A Calm, Repeatable Process)</title>
+<meta name="description" content="A step by step way to handle guest no-shows without losing money or goodwill: the pre-arrival confirmation, the hold window, the follow-up message, and the record you keep.">
+<link rel="canonical" href="https://fazliandre.github.io/guest-relations-site/no-show-guests.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Handle a Guest No-Show (A Calm, Repeatable Process)">
+<meta property="og:description" content="A step by step way to handle guest no-shows without losing money or goodwill: the pre-arrival confirmation, the hold window, the follow-up message, and the record you keep.">
+<meta property="og:url" content="https://fazliandre.github.io/guest-relations-site/no-show-guests.html">
+<meta property="og:site_name" content="The Guest Relations System">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:only light;
+  
+  --paper:#fbfaf7;--ink:#191a1c;--muted:#5a5d63;--faint:#8a8d93;
+  --accent:#1c3d5a;--accent-2:#0f2537;--line:#e6e2da;--fill:#f2efe9;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:#fbfaf7 !important;}
+body{background:#fbfaf7 !important;color:#191a1c !important;
+  font-family:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+  font-size:19px;line-height:1.72;-webkit-font-smoothing:antialiased;}
+a{color:var(--accent)}
+.masthead,.wrap,.hero,.articles,.home-cta,.home-foot,footer,section,article,div{background-color:transparent}
+.masthead{background:#fbfaf7 !important}
+.wrap,.hero,.articles,.home-cta,.home-foot{background:#fbfaf7 !important}
+h1,h2,h3,h4,p,li,span{color:inherit}
+.cta,.cta *{color:#eef2f6}
+.cta h3{color:#fff}
+.cta .btn{color:#0f2537}
+.takeaway{background:#ffffff !important}
+
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:8px;top:8px;background:#fff;padding:8px 12px;z-index:10;border-radius:3px}
+
+/* header */
+.masthead{border-bottom:1px solid var(--line);padding:18px 28px;background:var(--paper);}
+.masthead-inner{max-width:820px;margin:0 auto;display:flex;align-items:center;
+  justify-content:space-between;gap:20px;}
+.brand{font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--accent);text-decoration:none;}
+.nav{font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;letter-spacing:0.02em}
+.nav:hover{color:var(--accent)}
+
+.wrap{max-width:720px;margin:0 auto;padding:60px 28px 96px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--faint);margin-bottom:20px;}
+h1{font-family:'IBM Plex Serif',Georgia,serif;font-weight:600;font-size:43px;
+  line-height:1.14;letter-spacing:-0.015em;margin-bottom:24px;}
+.lede{font-size:22px;line-height:1.5;margin-bottom:14px}
+.lede-2{font-size:20px;color:var(--muted)}
+.rule{width:52px;height:2px;background:var(--accent);margin:38px 0 0}
+h2{font-family:'IBM Plex Serif',serif;font-weight:600;font-size:26px;
+  line-height:1.25;margin:52px 0 6px;}
+.step-label{font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--accent);display:block;margin-bottom:10px;}
+p{margin-bottom:18px;color:#26282b}
+.script{background:var(--fill);border-left:3px solid var(--accent);padding:18px 22px;
+  margin:22px 0;font-style:italic;color:#33363a;font-size:18px;line-height:1.6;border-radius:2px;}
+.script-label{display:block;font-style:normal;font-size:11px;font-weight:600;
+  letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;}
+hr{border:none;border-top:1px solid var(--line);margin:62px 0}
+
+/* takeaway box */
+.takeaway{border:1px solid var(--line);border-radius:5px;padding:26px 28px;margin:50px 0 0;background:#fff}
+.takeaway .eyebrow{margin-bottom:14px}
+.takeaway ul{list-style:none;margin:0}
+.takeaway li{position:relative;padding-left:22px;margin-bottom:10px;font-size:18px;color:#26282b}
+.takeaway li:last-child{margin-bottom:0}
+.takeaway li:before{content:"";position:absolute;left:0;top:12px;width:8px;height:2px;background:var(--accent)}
+
+/* cta */
+.cta{background:var(--accent);border-radius:6px;padding:38px 36px;color:#eef2f6;}
+.cta .eyebrow{color:#9bb4c9;margin-bottom:14px}
+.cta h3{font-family:'IBM Plex Serif',serif;font-weight:600;font-size:25px;
+  margin-bottom:12px;color:#fff;line-height:1.25;}
+.cta p{color:#cdd8e2;font-size:17px;margin-bottom:22px}
+.btn{display:inline-block;font-size:13px;font-weight:600;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--accent-2);background:#fff;padding:14px 28px;
+  border-radius:4px;text-decoration:none;}
+.btn:hover{background:#f0f0ec}
+.btn-solid{color:#fff;background:var(--accent)}
+.btn-solid:hover{background:var(--accent-2)}
+
+/* related */
+.related{margin-top:58px}
+.related .eyebrow{margin-bottom:16px}
+.related a{display:block;text-decoration:none;color:inherit;border-top:1px solid var(--line);
+  padding:18px 0;transition:padding-left .15s ease}
+.related a:hover{padding-left:6px}
+.related a:last-child{border-bottom:1px solid var(--line)}
+.related h4{font-family:'IBM Plex Serif',serif;font-weight:500;font-size:19px;color:var(--ink)}
+
+footer{border-top:1px solid var(--line);margin-top:56px;padding-top:26px;
+  color:var(--faint);font-size:14px}
+footer a{color:var(--faint)}
+
+/* home */
+.hero{max-width:820px;margin:0 auto;padding:84px 28px 38px}
+.hero h1{font-size:52px;line-height:1.1;letter-spacing:-0.02em;max-width:16ch}
+.hero .sub{font-size:22px;line-height:1.5;color:var(--muted);max-width:56ch;margin-bottom:32px}
+.trust{font-size:15px;color:var(--faint);margin-top:20px}
+.home-rule{max-width:820px;margin:0 auto}
+.articles{max-width:820px;margin:0 auto;padding:60px 28px 36px}
+.sec{font-family:'IBM Plex Sans',sans-serif;font-weight:600;font-size:12px;
+  letter-spacing:0.2em;text-transform:uppercase;color:var(--faint)}
+.list{border-top:1px solid var(--line);margin-top:24px}
+a.item{display:block;text-decoration:none;color:inherit;border-bottom:1px solid var(--line);
+  padding:26px 0;transition:padding-left .15s ease}
+a.item:hover{padding-left:8px}
+a.item h3{font-family:'IBM Plex Serif',serif;font-weight:500;font-size:23px;margin-bottom:6px}
+a.item p{font-size:17px;color:var(--muted);max-width:60ch;margin-bottom:0}
+a.item .go{font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--accent);margin-top:10px;display:inline-block}
+.home-cta{max-width:820px;margin:36px auto 0;padding:0 28px}
+.home-foot{max-width:820px;margin:0 auto;padding:0 28px 40px}
+
+@media(max-width:600px){
+  body{font-size:18px}
+  h1{font-size:33px}
+  .hero h1{font-size:35px}
+  .lede{font-size:20px}
+  .hero .sub{font-size:19px}
+  .wrap{padding:42px 22px 76px}
+  .hero{padding:52px 22px 30px}
+  .cta{padding:30px 26px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="masthead"><div class="masthead-inner">
+  <a class="brand" href="index.html">The Guest Relations System</a>
+  <a class="nav" href="index.html">All field notes</a>
+</div></div>
+<article class="wrap" id="main">
+  <p class="eyebrow">Field Notes</p>
+  <h1>How to Handle a Guest No-Show</h1>
+  <p class="lede">A no-show costs you a table, a room, or a booking you could have given to someone else. Handled badly, it also costs you the guest.</p>
+  <p class="lede-2">Here is a calm, repeatable way to deal with one, so the same situation never catches your team off guard twice.</p>
+  <div class="rule"></div>
+  <h2><span class="step-label">Before they arrive</span>Confirm, do not just remind</h2>
+  <p>Most no-shows are not rudeness. They are forgotten bookings, double plans, or a guest who assumed a cancellation went through when it did not. You prevent more of them with confirmation than with any penalty.</p>
+  <p>Send one message the day before that asks for a reply, not one that only informs. A reminder is easy to ignore. A question is not.</p>
+  <div class="script"><span class="script-label">What to say</span>Hello [Name], we are looking forward to seeing you tomorrow at [time] for [party size]. Could you reply to confirm you are still coming, so we can hold everything ready for you?</div>
+  <p>A guest who is no longer coming will often tell you now, while you can still fill the space. That single reply is worth more than any fee.</p>
+  <h2><span class="step-label">On the day</span>Hold the window, then release it</h2>
+  <p>Decide in advance how long you hold a booking past its start time. Fifteen minutes is common for a table, longer for a room. The point is that the number is agreed before the moment arrives, so no one is improvising while other guests wait.</p>
+  <p>During that window, try to reach them once, warmly. Something has usually gone wrong on their side, and a call often turns a no-show back into a late arrival.</p>
+  <div class="script"><span class="script-label">What to say</span>Hello [Name], we have your table ready and wanted to check you are on your way. No rush at all, we just want to make sure it is here for you.</div>
+  <p>If the window passes with no answer, release the space. You have done the considerate thing, and holding it longer only punishes the guests who did turn up.</p>
+  <h2><span class="step-label">Afterwards</span>Follow up without blame</h2>
+  <p>How you handle the day after decides whether this guest ever comes back. Resist the urge to make them feel bad. Most people already know they missed something, and a warm door is far more valuable than being right.</p>
+  <div class="script"><span class="script-label">What to say</span>Hello [Name], we missed you [today / yesterday] and hope everything is well. Whenever you would like to come in, we would be glad to have you. Just let us know and we will take care of the rest.</div>
+  <p>This costs you nothing and quietly does two things: it recovers a guest who felt awkward, and it makes clear that you noticed, without ever scolding them.</p>
+  <h2><span class="step-label">Every time</span>Keep the record</h2>
+  <p>Note it on the guest's profile: the no-show, the reason if you learned one, and whether you reached them. One missed booking is nothing. A pattern tells you whether to take a deposit next time, and whether it was ever really about this guest at all.</p>
+  <p>A no-show your team handles this way is not a loss. It is a chance to look organised, considerate, and hard to leave.</p>
+
+  <div class="takeaway">
+    <p class="eyebrow">In short</p>
+    <ul><li>Ask for a reply the day before, not just a reminder.</li><li>Agree your hold window in advance so nobody improvises.</li><li>Call once, warmly, before you release the space.</li><li>Follow up the next day without a hint of blame.</li><li>Record it, because the pattern matters more than the night.</li></ul>
+  </div>
+  <hr>
+  <section class="cta">
+    <p class="eyebrow">From the full system</p>
+    <h3>This is one of twelve modules.</h3>
+    <p>The no-show process above is a single part of the Guest Relations System, a complete set of hospitality scripts and procedures you can drop straight into your venue.</p>
+    <a class="btn" href="#">Get the full pack</a>
+  </section>
+  <section class="related">
+    <p class="eyebrow">Read next</p>
+    <a href="difficult-guest.html"><h4>How to handle a difficult guest</h4></a>
+    <a href="service-recovery.html"><h4>How to recover a guest after something goes wrong</h4></a>
+    <a href="reply-to-bad-review.html"><h4>How to reply to a bad Google review</h4></a>
+
+  </section>
+  <footer>The Guest Relations System &middot; Written for hotels, clubs, and restaurants. &middot; <a href="index.html">All field notes</a></footer>
+</article>
+</body>
+</html>
