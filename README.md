@@ -4,7 +4,7 @@ The public search site for The Guest Relations System. Six pages: a home page
 and five articles. Each page is self-contained, so you can open any of them in
 a browser directly.
 
-Live at https://fazliandre.github.io/guest-relations-site
+Live at https://theguestrelationssystem.com
 
 ## Building
 
@@ -19,7 +19,10 @@ every page that way, and the deploy workflow rejects hand-edited output.
 Two settings live at the top of `scripts/build-site.py`:
 
 - `SITE` — the public base URL, used for canonical tags, `og:url`, schema,
-  the sitemap, and robots.txt.
+  the sitemap, robots.txt, and `site/CNAME`. `CNAME` is what tells GitHub
+  Pages to serve the custom domain, and it is generated from `SITE`, so
+  changing that one line is enough to move domains. Do not edit `CNAME` by
+  hand — the next build overwrites it.
 - `BUY` — the Gumroad product link. While it is `"#"` the seven
   "Get the full pack" buttons are dead. Setting it to the real URL feeds all
   seven at once. This is the one thing still outstanding.

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fazliandre.github.io/guest-relations-site/sitemap.xml
+Sitemap: https://theguestrelationssystem.com/sitemap.xml

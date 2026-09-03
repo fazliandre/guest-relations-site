@@ -1,7 +1,7 @@
 import os
 OUT=os.path.join(os.path.dirname(os.path.abspath(__file__)),"..","site")
 os.makedirs(OUT,exist_ok=True)
-SITE="https://fazliandre.github.io/guest-relations-site"
+SITE="https://theguestrelationssystem.com"
 
 # The Gumroad product link. Set this to the real URL once the product is
 # listed; every "Get the full pack" button on the site picks it up. While it
@@ -401,4 +401,8 @@ urls="".join(f"  <url><loc>{SITE}/{s}.html</loc></url>\n" for s in order)
 open(f"{OUT}/sitemap.xml","w").write(
  f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>{SITE}/</loc></url>\n{urls}</urlset>\n')
 open(f"{OUT}/robots.txt","w").write(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
+
+# GitHub Pages reads site/CNAME to serve the custom domain. Derived from SITE
+# so the two can never disagree; editing SITE alone is enough.
+open(f"{OUT}/CNAME","w").write(SITE.split("://",1)[1].rstrip("/")+"\n")
 print("wrote sitemap, robots")
