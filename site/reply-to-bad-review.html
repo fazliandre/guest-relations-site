@@ -57,7 +57,7 @@ img{display:block}
   text-transform:uppercase;color:var(--ink);padding-bottom:5px;
   border-bottom:1px solid var(--ink);transition:opacity .4s ease}
 .tlink:hover{opacity:.55}
-.masthead.over .tlink{color:#fff;border-bottom-color:#fff}
+.masthead.over .tlink,.hero-cap .tlink{color:#fff;border-bottom-color:rgba(255,255,255,.9)}
 
 .eyebrow{font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--faint)}
 .serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300}
@@ -68,7 +68,7 @@ img{display:block}
   transform:scale(1.04);animation:settle 9s ease-out forwards}
 @keyframes settle{to{transform:scale(1)}}
 .hero::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(to bottom,rgba(24,21,16,.34) 0%,rgba(24,21,16,.18) 42%,rgba(24,21,16,.5) 100%)}
+  background:linear-gradient(to bottom,rgba(24,21,16,.4) 0%,rgba(24,21,16,.3) 45%,rgba(24,21,16,.58) 100%)}
 .hero-cap{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;
   align-items:center;justify-content:center;text-align:center;color:#fff;padding:0 24px}
 .hero-cap .eyebrow{color:rgba(255,255,255,.82);margin-bottom:30px}
