@@ -180,6 +180,8 @@ HEAD = '''<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="{themecolor}">
+<style>html{{background:{htmlbg}}}</style>
 <title>{title}</title>
 <meta name="description" content="{meta}">
 <link rel="canonical" href="{site}/{slug}">
@@ -426,7 +428,8 @@ for slug,d in P.items():
     })
     img,alt=ART_IMG[slug]
     html=HEAD.format(title=d["title"],meta=d["meta"],site=SITE,slug=slug+".html",
-                     ogtype="article",schema=schema,css=CSS)
+                     ogtype="article",schema=schema,css=CSS,
+                     themecolor="#f8f6f2",htmlbg="#f8f6f2")
     html+=mast()+ART.format(h1=d["h1"],lede1=d["lede1"],lede2=d["lede2"],body=d["body"],
                      takeaway=tk,cta_h=d["cta_h"],cta_p=d["cta_p"],related=rel,BUY=BUY,
                      img=img,alt=alt)
@@ -445,7 +448,8 @@ hschema=json.dumps({"@context":"https://schema.org","@type":"WebSite",
   "name":"The Guest Relations System","url":SITE})
 home=HEAD.format(title="The Guest Relations System — Hospitality Scripts and Procedures",
  meta="A complete set of guest relations scripts and procedures for hotels, clubs, and restaurants. Handle no-shows, difficult guests, recovery, reviews, and recognition with a system your team can follow.",
- site=SITE,slug="",ogtype="website",schema=hschema,css=CSS)
+ site=SITE,slug="",ogtype="website",schema=hschema,css=CSS,
+ themecolor="#72675b",htmlbg="#72675b")
 home+=mast(over=True)+f'''<figure class="hero">
   <img src="hero.jpg" alt="A calm, empty hotel lounge with soft morning light">
   <figcaption class="hero-cap">
