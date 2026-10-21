@@ -10,7 +10,7 @@ BUY="#"
 
 CSS = """
 :root{color-scheme:only light;
-  --paper:#f8f6f2;--ink:#2b2823;--body:#4c4841;--muted:#7a766d;--faint:#a09a8f;--line:#e3ded4;
+  --paper:#f2ede5;--ink:#2b2823;--body:#4c4841;--muted:#746f64;--faint:#999286;--line:#ddd6c8;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;background:var(--paper)}
@@ -19,10 +19,10 @@ body{background:var(--paper);color:var(--ink);
   font-size:16.5px;line-height:1.85;-webkit-font-smoothing:antialiased;}
 a{color:inherit;text-decoration:none}
 img{display:block}
-::selection{background:#e8e2d5}
+::selection{background:#e2daca}
 
 .skip{position:absolute;left:-9999px}
-.skip:focus{left:8px;top:8px;background:#fff;padding:8px 12px;z-index:10}
+.skip:focus{left:8px;top:8px;background:#f6f1e9;padding:8px 12px;z-index:10}
 
 /* soft reveal on scroll */
 .js .reveal{opacity:0;transform:translateY(14px);transition:opacity 1.5s ease,transform 1.5s ease}
@@ -181,7 +181,6 @@ HEAD = '''<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="{themecolor}">
-<style>html{{background:{htmlbg}}}</style>
 <title>{title}</title>
 <meta name="description" content="{meta}">
 <link rel="canonical" href="{site}/{slug}">
@@ -198,6 +197,7 @@ HEAD = '''<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>{css}</style>
+<style>{edge}</style>
 <script type="application/ld+json">{schema}</script>
 </head>
 <body>
@@ -429,7 +429,7 @@ for slug,d in P.items():
     img,alt=ART_IMG[slug]
     html=HEAD.format(title=d["title"],meta=d["meta"],site=SITE,slug=slug+".html",
                      ogtype="article",schema=schema,css=CSS,
-                     themecolor="#f8f6f2",htmlbg="#f8f6f2")
+                     themecolor="#f2ede5",edge="html,body{background:#f2ede5}")
     html+=mast()+ART.format(h1=d["h1"],lede1=d["lede1"],lede2=d["lede2"],body=d["body"],
                      takeaway=tk,cta_h=d["cta_h"],cta_p=d["cta_p"],related=rel,BUY=BUY,
                      img=img,alt=alt)
@@ -449,7 +449,7 @@ hschema=json.dumps({"@context":"https://schema.org","@type":"WebSite",
 home=HEAD.format(title="The Guest Relations System — Hospitality Scripts and Procedures",
  meta="A complete set of guest relations scripts and procedures for hotels, clubs, and restaurants. Handle no-shows, difficult guests, recovery, reviews, and recognition with a system your team can follow.",
  site=SITE,slug="",ogtype="website",schema=hschema,css=CSS,
- themecolor="#72675b",htmlbg="#72675b")
+ themecolor="#72675b",edge="html,body{background:#72675b}.section,.end-note,footer.site-foot{background:var(--paper)}.section,.end-note{box-shadow:0 0 0 100vmax var(--paper);clip-path:inset(0 -100vmax)}")
 home+=mast(over=True)+f'''<figure class="hero">
   <img src="hero.jpg" alt="A calm, empty hotel lounge with soft morning light">
   <figcaption class="hero-cap">
