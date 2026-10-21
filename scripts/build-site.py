@@ -8,6 +8,10 @@ SITE="https://theguestrelationssystem.com"
 # is "#" the buttons are dead, which is the one thing still outstanding.
 BUY="#"
 
+# One calm, uncropped photo for the home hero. Put the file in site/ and set
+# this to its name (e.g. "hero.jpg"); leave empty for no photo.
+HERO_PHOTO="hero.jpg"
+
 CSS = """
 :root{color-scheme:only light;
   
@@ -19,15 +23,11 @@ html{scroll-behavior:smooth;background:#fbfaf7 !important;}
 body{background:#fbfaf7 !important;color:#191a1c !important;
   font-family:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
   font-size:19px;line-height:1.72;-webkit-font-smoothing:antialiased;}
-a{color:var(--accent)}
+a{color:var(--ink)}
 .masthead,.wrap,.hero,.articles,.home-cta,.home-foot,footer,section,article,div{background-color:transparent}
 .masthead{background:#fbfaf7 !important}
 .wrap,.hero,.articles,.home-cta,.home-foot{background:#fbfaf7 !important}
 h1,h2,h3,h4,p,li,span{color:inherit}
-.cta,.cta *{color:#eef2f6}
-.cta h3{color:#fff}
-.cta .btn{color:#0f2537}
-.takeaway{background:#ffffff !important}
 
 .skip{position:absolute;left:-9999px}
 .skip:focus{left:8px;top:8px;background:#fff;padding:8px 12px;z-index:10;border-radius:3px}
@@ -36,32 +36,30 @@ h1,h2,h3,h4,p,li,span{color:inherit}
 .masthead{border-bottom:1px solid var(--line);padding:18px 28px;background:var(--paper);}
 .masthead-inner{max-width:820px;margin:0 auto;display:flex;align-items:center;
   justify-content:space-between;gap:20px;}
-.brand{font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;
-  color:var(--accent);text-decoration:none;}
+.brand{font-size:14px;font-weight:500;letter-spacing:0.01em;color:var(--ink);text-decoration:none;}
 .nav{font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;letter-spacing:0.02em}
 .nav:hover{color:var(--accent)}
 
-.wrap{max-width:720px;margin:0 auto;padding:60px 28px 96px}
-.eyebrow{font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--faint);margin-bottom:20px;}
-h1{font-family:'IBM Plex Serif',Georgia,serif;font-weight:600;font-size:43px;
-  line-height:1.14;letter-spacing:-0.015em;margin-bottom:24px;}
+.wrap{max-width:720px;margin:0 auto;padding:88px 28px 110px}
+.eyebrow{font-size:14px;font-weight:500;letter-spacing:0.01em;color:var(--faint);margin-bottom:22px;}
+h1{font-family:'IBM Plex Serif',Georgia,serif;font-weight:300;font-size:48px;
+  line-height:1.2;letter-spacing:0;margin-bottom:30px;}
 .lede{font-size:22px;line-height:1.5;margin-bottom:14px}
 .lede-2{font-size:20px;color:var(--muted)}
-.rule{width:52px;height:2px;background:var(--accent);margin:38px 0 0}
-h2{font-family:'IBM Plex Serif',serif;font-weight:600;font-size:26px;
-  line-height:1.25;margin:52px 0 6px;}
-.step-label{font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;
-  color:var(--accent);display:block;margin-bottom:10px;}
+.rule{width:52px;height:1px;background:var(--ink);margin:56px 0 0}
+h2{font-family:'IBM Plex Serif',serif;font-weight:400;font-size:26px;
+  line-height:1.3;margin:68px 0 8px;}
+.step-label{font-size:13px;font-weight:500;letter-spacing:0.01em;
+  color:var(--faint);display:block;margin-bottom:12px;}
 p{margin-bottom:18px;color:#26282b}
 .script{background:var(--fill);border-left:3px solid var(--accent);padding:18px 22px;
   margin:22px 0;font-style:italic;color:#33363a;font-size:18px;line-height:1.6;border-radius:2px;}
-.script-label{display:block;font-style:normal;font-size:11px;font-weight:600;
-  letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;}
-hr{border:none;border-top:1px solid var(--line);margin:62px 0}
+.script-label{display:block;font-style:normal;font-size:13px;font-weight:500;
+  letter-spacing:0.01em;color:var(--faint);margin-bottom:10px;}
+hr{border:none;border-top:1px solid var(--line);margin:76px 0}
 
 /* takeaway box */
-.takeaway{border:1px solid var(--line);border-radius:5px;padding:26px 28px;margin:50px 0 0;background:#fff}
+.takeaway{border:none;border-top:1px solid var(--line);border-radius:0;padding:36px 0 0;margin:64px 0 0;background:transparent}
 .takeaway .eyebrow{margin-bottom:14px}
 .takeaway ul{list-style:none;margin:0}
 .takeaway li{position:relative;padding-left:22px;margin-bottom:10px;font-size:18px;color:#26282b}
@@ -69,60 +67,63 @@ hr{border:none;border-top:1px solid var(--line);margin:62px 0}
 .takeaway li:before{content:"";position:absolute;left:0;top:12px;width:8px;height:2px;background:var(--accent)}
 
 /* cta */
-.cta{background:var(--accent);border-radius:6px;padding:38px 36px;color:#eef2f6;}
-.cta .eyebrow{color:#9bb4c9;margin-bottom:14px}
-.cta h3{font-family:'IBM Plex Serif',serif;font-weight:600;font-size:25px;
-  margin-bottom:12px;color:#fff;line-height:1.25;}
-.cta p{color:#cdd8e2;font-size:17px;margin-bottom:22px}
-.btn{display:inline-block;font-size:13px;font-weight:600;letter-spacing:0.12em;
-  text-transform:uppercase;color:var(--accent-2);background:#fff;padding:14px 28px;
-  border-radius:4px;text-decoration:none;}
-.btn:hover{background:#f0f0ec}
-.btn-solid{color:#fff;background:var(--accent)}
-.btn-solid:hover{background:var(--accent-2)}
+.cta{background:transparent;border-top:1px solid var(--line);padding:56px 0 8px;color:var(--ink)}
+.cta .eyebrow{color:var(--faint);margin-bottom:14px}
+.cta h3{font-family:'IBM Plex Serif',serif;font-weight:400;font-size:27px;
+  margin-bottom:12px;color:var(--ink);line-height:1.25;}
+.cta p{color:var(--muted);font-size:17px;margin-bottom:22px;max-width:60ch}
+.btn{display:inline-block;font-size:16px;font-weight:500;letter-spacing:0.01em;
+  color:var(--ink);background:none;padding:0 0 4px;border:none;border-radius:0;
+  text-decoration:none;border-bottom:1px solid var(--ink);}
+.btn:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.btn-solid{color:var(--ink);background:none}
+.btn-solid:hover{color:var(--accent);border-bottom-color:var(--accent)}
 
 /* related */
-.related{margin-top:58px}
+.related{margin-top:72px}
 .related .eyebrow{margin-bottom:16px}
 .related a{display:block;text-decoration:none;color:inherit;border-top:1px solid var(--line);
   padding:18px 0;transition:padding-left .15s ease}
 .related a:hover{padding-left:6px}
 .related a:last-child{border-bottom:1px solid var(--line)}
-.related h4{font-family:'IBM Plex Serif',serif;font-weight:500;font-size:19px;color:var(--ink)}
+.related h4{font-family:'IBM Plex Serif',serif;font-weight:400;font-size:19px;color:var(--ink)}
 
-footer{border-top:1px solid var(--line);margin-top:56px;padding-top:26px;
+footer{border-top:1px solid var(--line);margin-top:76px;padding-top:28px;
   color:var(--faint);font-size:14px}
 footer a{color:var(--faint)}
 
 /* home */
-.hero{max-width:820px;margin:0 auto;padding:84px 28px 38px}
-.hero h1{font-size:52px;line-height:1.1;letter-spacing:-0.02em;max-width:16ch}
-.hero .sub{font-size:22px;line-height:1.5;color:var(--muted);max-width:56ch;margin-bottom:32px}
-.trust{font-size:15px;color:var(--faint);margin-top:20px}
+.hero{max-width:820px;margin:0 auto;padding:120px 28px 72px}
+.hero h1{font-size:64px;line-height:1.12;letter-spacing:0;max-width:15ch}
+.hero .sub{font-size:22px;line-height:1.55;color:var(--muted);max-width:56ch;margin-bottom:40px}
+.trust{font-size:15px;color:var(--faint);margin-top:28px}
+.hero-photo{display:block;width:100%;height:auto;margin:0}
+.hero.has-photo{padding-top:88px}
 .home-rule{max-width:820px;margin:0 auto}
-.articles{max-width:820px;margin:0 auto;padding:60px 28px 36px}
-.sec{font-family:'IBM Plex Sans',sans-serif;font-weight:600;font-size:12px;
-  letter-spacing:0.2em;text-transform:uppercase;color:var(--faint)}
+.articles{max-width:820px;margin:0 auto;padding:72px 28px 48px}
+.sec{font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14px;
+  letter-spacing:0.01em;color:var(--faint)}
 .list{border-top:1px solid var(--line);margin-top:24px}
 a.item{display:block;text-decoration:none;color:inherit;border-bottom:1px solid var(--line);
-  padding:26px 0;transition:padding-left .15s ease}
+  padding:36px 0;transition:padding-left .15s ease}
 a.item:hover{padding-left:8px}
-a.item h3{font-family:'IBM Plex Serif',serif;font-weight:500;font-size:23px;margin-bottom:6px}
+a.item h3{font-family:'IBM Plex Serif',serif;font-weight:400;font-size:24px;margin-bottom:8px}
 a.item p{font-size:17px;color:var(--muted);max-width:60ch;margin-bottom:0}
-a.item .go{font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;
-  color:var(--accent);margin-top:10px;display:inline-block}
-.home-cta{max-width:820px;margin:36px auto 0;padding:0 28px}
-.home-foot{max-width:820px;margin:0 auto;padding:0 28px 40px}
+a.item .go{font-size:14px;font-weight:500;letter-spacing:0.01em;color:var(--ink);
+  margin-top:12px;display:inline-block;border-bottom:1px solid var(--ink);padding-bottom:2px}
+.home-cta{max-width:820px;margin:64px auto 0;padding:0 28px}
+.home-foot{max-width:820px;margin:0 auto;padding:0 28px 64px}
 
 @media(max-width:600px){
   body{font-size:18px}
-  h1{font-size:33px}
-  .hero h1{font-size:35px}
+  h1{font-size:34px}
+  .hero h1{font-size:40px}
   .lede{font-size:20px}
   .hero .sub{font-size:19px}
-  .wrap{padding:42px 22px 76px}
-  .hero{padding:52px 22px 30px}
-  .cta{padding:30px 26px}
+  .wrap{padding:56px 22px 80px}
+  .hero{padding:64px 22px 44px}
+  .cta{padding:44px 0 4px}
+  a.item{padding:28px 0}
 }
 """
 
@@ -140,9 +141,12 @@ HEAD = '''<!DOCTYPE html>
 <meta property="og:url" content="{site}/{slug}">
 <meta property="og:site_name" content="The Guest Relations System">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>{css}</style>
 </head>
 <body>
@@ -164,7 +168,6 @@ ART = '''<article class="wrap" id="main">
     <p class="eyebrow">In short</p>
     <ul>{takeaway}</ul>
   </div>
-  <hr>
   <section class="cta">
     <p class="eyebrow">From the full system</p>
     <h3>{cta_h}</h3>
@@ -221,8 +224,8 @@ P["no-show-guests"]=dict(
            "Call once, warmly, before you release the space.",
            "Follow up the next day without a hint of blame.",
            "Record it, because the pattern matters more than the night."],
- cta_h="This is one of twelve modules.",
- cta_p="The no-show process above is a single part of the Guest Relations System, a complete set of hospitality scripts and procedures you can drop straight into your venue.",
+ cta_h="This is one of 39 templates.",
+ cta_p="The no-show process above is drawn from the Guest Relations System, the full library of 39 ready to edit guest messages you can drop straight into your venue.",
  nav="How to handle a guest no-show")
 
 # ---- difficult ----
@@ -250,8 +253,8 @@ P["difficult-guest"]=dict(
            "Fix the real issue plainly rather than smothering it in gestures.",
            "Match what you offer to the size of the mistake.",
            "Note the pattern, then let the night go."],
- cta_h="This is one of twelve modules.",
- cta_p="The process above is a single part of the Guest Relations System, a complete set of hospitality scripts and procedures you can drop straight into your venue.",
+ cta_h="This is one of 39 templates.",
+ cta_p="The process above is drawn from the Guest Relations System, the full library of 39 ready to edit guest messages you can drop straight into your venue.",
  nav="How to handle a difficult guest")
 
 # ---- recovery ----
@@ -279,8 +282,8 @@ P["service-recovery"]=dict(
            "Match what you give to the size of the mistake.",
            "Set the tiers in advance so staff can act without a manager.",
            "Record it, because repeats point at your operation, not the guest."],
- cta_h="This is one of twelve modules.",
- cta_p="The recovery process above is a single part of the Guest Relations System, a complete set of hospitality scripts and procedures you can drop straight into your venue.",
+ cta_h="This is one of 39 templates.",
+ cta_p="The recovery process above is drawn from the Guest Relations System, the full library of 39 ready to edit guest messages you can drop straight into your venue.",
  nav="How to recover a guest after something goes wrong")
 
 # ---- review ----
@@ -308,8 +311,8 @@ P["reply-to-bad-review"]=dict(
            "Never argue the details in public, even when you are right.",
            "Report only what is abusive or clearly fake.",
            "Three reviews about the same thing is data, so fix the cause."],
- cta_h="This is one of twelve modules.",
- cta_p="The written response module this is drawn from includes reply templates for every kind of review, good and bad. It is one part of the Guest Relations System.",
+ cta_h="This is one of 39 templates.",
+ cta_p="The full library includes reply templates for every kind of review, good and bad. They are part of the 39 ready to edit guest messages in the Guest Relations System.",
  nav="How to reply to a bad Google review")
 
 # ---- recognition ----
@@ -337,8 +340,8 @@ P["guest-recognition"]=dict(
            "Read the profile shortly before the guest arrives.",
            "Flag birthdays and anniversaries in advance, never on the night.",
            "Recognition buys attachment where discounts only buy visits."],
- cta_h="This is one of twelve modules.",
- cta_p="The recognition module this is drawn from includes the guest record and occasion system in full. It is one part of the Guest Relations System.",
+ cta_h="This is one of 39 templates.",
+ cta_p="The full library includes the guest record and occasion messages in full. They are part of the 39 ready to edit guest messages in the Guest Relations System.",
  nav="How to remember your regulars")
 
 import json
@@ -363,19 +366,21 @@ for slug,d in P.items():
 items="".join(f'''    <a class="item" href="{s}.html">
       <h3>{P[s]["nav"]}</h3>
       <p>{P[s]["meta"]}</p>
-      <span class="go">Read &rarr;</span>
+      <span class="go">Read more</span>
     </a>\n''' for s in order)
 hschema=json.dumps({"@context":"https://schema.org","@type":"WebSite",
   "name":"The Guest Relations System","url":SITE})
+hero_photo=f'<img class="hero-photo" src="{HERO_PHOTO}" alt="A calm, empty hotel lounge">\n' if HERO_PHOTO else ""
+hero_cls=" has-photo" if HERO_PHOTO else ""
 home=HEAD.format(title="The Guest Relations System — Hospitality Scripts and Procedures",
  meta="A complete set of guest relations scripts and procedures for hotels, clubs, and restaurants. Handle no-shows, difficult guests, recovery, reviews, and recognition with a system your team can follow.",
  site=SITE,slug="",ogtype="website",schema=hschema,css=CSS)
-home+=f'''<div class="hero" id="main">
+home+=f'''{hero_photo}<div class="hero{hero_cls}" id="main">
   <p class="eyebrow">For hotels, clubs, and restaurants</p>
   <h1>The difference is how you handle the moment.</h1>
   <p class="sub">A complete set of guest relations scripts and procedures your team can follow, drawn from a system built and run inside a working venue. No theory. Just what to say and do when it matters.</p>
   <a class="btn btn-solid" href="{BUY}">Get the full pack</a>
-  <p class="trust">Twelve modules &middot; One download &middot; No subscription</p>
+  <p class="trust">39 templates &middot; One download &middot; No subscription</p>
 </div>
 <div style="padding:0 28px"><div class="home-rule"><div class="rule" style="margin:0"></div></div></div>
 <section class="articles">
@@ -386,8 +391,8 @@ home+=f'''<div class="hero" id="main">
 <div class="home-cta">
   <div class="cta">
     <p class="eyebrow">The complete system</p>
-    <h3>Twelve modules. One download.</h3>
-    <p>Everything above is a small taste. The full system covers the guest record, recovery, no-shows, difficult guests, recognition, written responses, special occasions, hiring, and more, ready to drop into your venue.</p>
+    <h3>39 templates. One download.</h3>
+    <p>Everything above is a small taste. The full library covers the guest record, recovery, no-shows, difficult guests, recognition, written responses, special occasions, and more: 39 ready to edit messages to drop straight into your venue.</p>
     <a class="btn" href="{BUY}">Get the full pack</a>
   </div>
 </div>
@@ -406,3 +411,14 @@ open(f"{OUT}/robots.txt","w").write(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}
 # so the two can never disagree; editing SITE alone is enough.
 open(f"{OUT}/CNAME","w").write(SITE.split("://",1)[1].rstrip("/")+"\n")
 print("wrote sitemap, robots")
+
+# Favicons: a quiet serif monogram on cream. Generated inside the build so
+# the deploy runner needs no extra tools; the ICO and PNG bytes are embedded.
+import base64 as _b64
+FAVICON_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" fill="#fbfaf7"/><text x="32" y="43" font-family="Georgia, \'Times New Roman\', serif" font-size="38" fill="#191a1c" text-anchor="middle">G</text></svg>'
+FAVICON_ICO_B64 = "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"
+APPLE_TOUCH_ICON_B64 = "iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAU5klEQVR4nO2deZRVxZnAv6q669u76YW9gYbQgCIoAVokuCAKJlFnjjMxmjlJNDlOJjlZjOS4EOOg0SQuxDiT0Rg0Go0xSIyCEKNmNMkYh0WMGhlotgYa6IXu12+5a1XNH0U3HeSG169fw31N/f5oHq/fu/f2rd+t76u6VXWR51ogkRwPfKoPQBJepBySQKQckkCkHJJApBySQKQckkCkHJJApBySQKQckkCkHJJApBySQKQckkCkHJJApBySQKQckkCkHJJApBySQKQckkCkHJJApBySQKQckkCkHJJApBySQKQckkCkHJJApBySQKQckkCkHJJApBySQKQckkCkHJJApBySQKQckkCkHJJApBySQKQckkCkHJJApBySQKQckkCkHJJApBySQKQckkCkHJJAlFN9AKcMzjnnXLzofefYDyGE+rwU/+vz3hDndJGD9wEhTAhWFAVhBaBfJc04o5RSxphQCyFACCM0NI0Z4nJwzhljAKAoClH03vep73R1pTs6Ojq7ujo7O9PpdDaby+fzvu/7vs85EIJVVTUMI2Ka8UQimYgnk8lUKpVKJWOxmKZH+uyEUd/zfV9ohzEaMqIMTTmEEwghTTdEXmVbuaamnX/94IMPPti6bdv2vXv3tra1pdPdlmW5ritqAsZ4b2zpCSAIIYQxwpgYhm6aZiIeH1Y1bMTw4XV1YydMGD+xvn7c+LoRw0foRrRn377Y4BFNylkUNMSetyKKWdd1QAoA7Nmz6803//ynP725afPm5ua96XQ3pT4hRFEURVEVhfQtQvGjz8aOJiHCNsYYpdT3fd+nlFKEQNO0VCo5auSoyZM/MmPG9JkzzpoypWFYVa34FvUd3/cBQOzlZJ6HkjB05GCMAXBNjwLAoYMtr7z62m9eWLNx46bW1lYOYOi6pmmKoiCEepMPOG4SGgzqW58g4Bw4577vu67nei6j1DDMESNqp02beu65jfPObTxj2jQzEgMAzjzXdaHcLBkKchypLYwoAGzZsvmpp59Zs2bt3r37MMaRSERVVTiSkLICTfhw+f0dh1AfGGOu69q27ft+NBqtr59wbmPjxRdfNHfOnIrKYQDAqOt5HkII4zLoRCh7OXyfGqYJgDds2PDjH//XS+vWZzKZaDSm6xr0eHPC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"
+open(f"{OUT}/favicon.svg","w").write(FAVICON_SVG)
+open(f"{OUT}/favicon.ico","wb").write(_b64.b64decode(FAVICON_ICO_B64))
+open(f"{OUT}/apple-touch-icon.png","wb").write(_b64.b64decode(APPLE_TOUCH_ICON_B64))
+print("wrote favicons")
