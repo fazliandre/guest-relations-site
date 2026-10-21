@@ -8,122 +8,164 @@ SITE="https://theguestrelationssystem.com"
 # is "#" the buttons are dead, which is the one thing still outstanding.
 BUY="#"
 
-# One calm, uncropped photo for the home hero. Put the file in site/ and set
-# this to its name (e.g. "hero.jpg"); leave empty for no photo.
-HERO_PHOTO="hero.jpg"
-
 CSS = """
 :root{color-scheme:only light;
-  
-  --paper:#fbfaf7;--ink:#191a1c;--muted:#5a5d63;--faint:#8a8d93;
-  --accent:#1c3d5a;--accent-2:#0f2537;--line:#e6e2da;--fill:#f2efe9;
+  --paper:#f8f6f2;--ink:#2b2823;--body:#4c4841;--muted:#7a766d;--faint:#a09a8f;--line:#e3ded4;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;background:#fbfaf7 !important;}
-body{background:#fbfaf7 !important;color:#191a1c !important;
+html{scroll-behavior:smooth;background:var(--paper)}
+body{background:var(--paper);color:var(--ink);
   font-family:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
-  font-size:19px;line-height:1.72;-webkit-font-smoothing:antialiased;}
-a{color:var(--ink)}
-.masthead,.wrap,.hero,.articles,.home-cta,.home-foot,footer,section,article,div{background-color:transparent}
-.masthead{background:#fbfaf7 !important}
-.wrap,.hero,.articles,.home-cta,.home-foot{background:#fbfaf7 !important}
-h1,h2,h3,h4,p,li,span{color:inherit}
+  font-size:16.5px;line-height:1.85;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none}
+img{display:block}
+::selection{background:#e8e2d5}
 
 .skip{position:absolute;left:-9999px}
-.skip:focus{left:8px;top:8px;background:#fff;padding:8px 12px;z-index:10;border-radius:3px}
+.skip:focus{left:8px;top:8px;background:#fff;padding:8px 12px;z-index:10}
 
-/* header */
-.masthead{border-bottom:1px solid var(--line);padding:18px 28px;background:var(--paper);}
-.masthead-inner{max-width:820px;margin:0 auto;display:flex;align-items:center;
-  justify-content:space-between;gap:20px;}
-.brand{font-size:14px;font-weight:500;letter-spacing:0.01em;color:var(--ink);text-decoration:none;}
-.nav{font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;letter-spacing:0.02em}
-.nav:hover{color:var(--accent)}
+/* soft reveal on scroll */
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity 1.1s ease,transform 1.1s ease}
+.js .reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}}
 
-.wrap{max-width:720px;margin:0 auto;padding:88px 28px 110px}
-.eyebrow{font-size:14px;font-weight:500;letter-spacing:0.01em;color:var(--faint);margin-bottom:22px;}
-h1{font-family:'IBM Plex Serif',Georgia,serif;font-weight:300;font-size:48px;
-  line-height:1.2;letter-spacing:0;margin-bottom:30px;}
-.lede{font-size:22px;line-height:1.5;margin-bottom:14px}
-.lede-2{font-size:20px;color:var(--muted)}
-.rule{width:52px;height:1px;background:var(--ink);margin:56px 0 0}
-h2{font-family:'IBM Plex Serif',serif;font-weight:400;font-size:26px;
-  line-height:1.3;margin:68px 0 8px;}
-.step-label{font-size:13px;font-weight:500;letter-spacing:0.01em;
-  color:var(--faint);display:block;margin-bottom:12px;}
-p{margin-bottom:18px;color:#26282b}
-.script{background:var(--fill);border-left:3px solid var(--accent);padding:18px 22px;
-  margin:22px 0;font-style:italic;color:#33363a;font-size:18px;line-height:1.6;border-radius:2px;}
-.script-label{display:block;font-style:normal;font-size:13px;font-weight:500;
-  letter-spacing:0.01em;color:var(--faint);margin-bottom:10px;}
-hr{border:none;border-top:1px solid var(--line);margin:76px 0}
+/* ---------- masthead: centred wordmark, tiny quiet nav ---------- */
+.masthead{position:relative;z-index:5;padding:32px}
+.masthead.over{position:absolute;top:0;left:0;right:0;color:#fff}
+.mast-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+.brand{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:16px;
+  letter-spacing:.32em;text-transform:uppercase;white-space:nowrap;text-align:center;
+  transition:opacity .4s ease}
+.brand:hover{opacity:.6}
+.mnav{font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;
+  color:inherit;opacity:.75;transition:opacity .4s ease}
+.mnav:hover{opacity:1}
+.mnav.l{justify-self:start}.mnav.r{justify-self:end}
 
-/* takeaway box */
-.takeaway{border:none;border-top:1px solid var(--line);border-radius:0;padding:36px 0 0;margin:64px 0 0;background:transparent}
-.takeaway .eyebrow{margin-bottom:14px}
-.takeaway ul{list-style:none;margin:0}
-.takeaway li{position:relative;padding-left:22px;margin-bottom:10px;font-size:18px;color:#26282b}
-.takeaway li:last-child{margin-bottom:0}
-.takeaway li:before{content:"";position:absolute;left:0;top:12px;width:8px;height:2px;background:var(--accent)}
+/* tiny uppercase links used throughout */
+.tlink{display:inline-block;font-size:11.5px;font-weight:500;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ink);padding-bottom:5px;
+  border-bottom:1px solid var(--ink);transition:opacity .4s ease}
+.tlink:hover{opacity:.55}
+.masthead.over .tlink{color:#fff;border-bottom-color:#fff}
 
-/* cta */
-.cta{background:transparent;border-top:1px solid var(--line);padding:56px 0 8px;color:var(--ink)}
-.cta .eyebrow{color:var(--faint);margin-bottom:14px}
-.cta h3{font-family:'IBM Plex Serif',serif;font-weight:400;font-size:27px;
-  margin-bottom:12px;color:var(--ink);line-height:1.25;}
-.cta p{color:var(--muted);font-size:17px;margin-bottom:22px;max-width:60ch}
-.btn{display:inline-block;font-size:16px;font-weight:500;letter-spacing:0.01em;
-  color:var(--ink);background:none;padding:0 0 4px;border:none;border-radius:0;
-  text-decoration:none;border-bottom:1px solid var(--ink);}
-.btn:hover{color:var(--accent);border-bottom-color:var(--accent)}
-.btn-solid{color:var(--ink);background:none}
-.btn-solid:hover{color:var(--accent);border-bottom-color:var(--accent)}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--faint)}
+.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300}
+"""
+CSS += """
+/* ---------- home hero: one slow full-bleed image ---------- */
+.hero{position:relative;height:100vh;height:100svh;min-height:560px;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transform:scale(1.04);animation:settle 9s ease-out forwards}
+@keyframes settle{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(24,21,16,.34) 0%,rgba(24,21,16,.18) 42%,rgba(24,21,16,.5) 100%)}
+.hero-cap{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;color:#fff;padding:0 24px}
+.hero-cap .eyebrow{color:rgba(255,255,255,.82);margin-bottom:30px}
+.hero-cap h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;
+  font-size:60px;line-height:1.16;max-width:16ch;margin-bottom:26px}
+.hero-cap .sub{font-size:16.5px;line-height:1.75;color:rgba(255,255,255,.85);max-width:52ch;margin-bottom:38px}
+.hero-cap .trust{margin-top:34px;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.62)}
+.scroll-cue{position:absolute;left:50%;bottom:34px;transform:translateX(-50%);z-index:2;
+  font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.75);text-align:center}
+.scroll-cue::after{content:"";display:block;width:1px;height:44px;margin:12px auto 0;
+  background:linear-gradient(to bottom,rgba(255,255,255,.75),rgba(255,255,255,0))}
 
-/* related */
-.related{margin-top:72px}
-.related .eyebrow{margin-bottom:16px}
-.related a{display:block;text-decoration:none;color:inherit;border-top:1px solid var(--line);
-  padding:18px 0;transition:padding-left .15s ease}
-.related a:hover{padding-left:6px}
-.related a:last-child{border-bottom:1px solid var(--line)}
-.related h4{font-family:'IBM Plex Serif',serif;font-weight:400;font-size:19px;color:var(--ink)}
+/* ---------- full-bleed section images ---------- */
+.bleed{margin:0}
+.bleed img{width:100%;height:72vh;object-fit:cover}
 
-footer{border-top:1px solid var(--line);margin-top:76px;padding-top:28px;
-  color:var(--faint);font-size:14px}
-footer a{color:var(--faint)}
+/* ---------- home sections ---------- */
+.section{max-width:860px;margin:0 auto;padding:150px 32px;text-align:center}
+.section .eyebrow{margin-bottom:34px}
+.section h2.big{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;
+  font-size:46px;line-height:1.18;margin-bottom:26px}
+.section .lead{font-size:17px;color:var(--muted);max-width:56ch;margin:0 auto 42px}
+.notes-list{margin-top:30px}
+.note{padding:74px 0}
+.note+.note{border-top:1px solid var(--line)}
+.note h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:31px;
+  line-height:1.25;margin-bottom:14px;transition:opacity .4s ease}
+.note p{font-size:15.5px;color:var(--muted);max-width:54ch;margin:0 auto 22px}
+.note a{display:block}
+.note a:hover h3{opacity:.6}
+.note .tlink{margin-top:2px}
+.end-note{padding:150px 32px;text-align:center;max-width:860px;margin:0 auto}
+.end-note .eyebrow{margin-bottom:34px}
+.end-note h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;
+  font-size:44px;line-height:1.18;margin-bottom:24px}
+.end-note p{font-size:16.5px;color:var(--muted);max-width:56ch;margin:0 auto 40px}
 
-/* home */
-.hero{max-width:820px;margin:0 auto;padding:120px 28px 72px}
-.hero h1{font-size:64px;line-height:1.12;letter-spacing:0;max-width:15ch}
-.hero .sub{font-size:22px;line-height:1.55;color:var(--muted);max-width:56ch;margin-bottom:40px}
-.trust{font-size:15px;color:var(--faint);margin-top:28px}
-.hero-photo{display:block;width:100%;height:auto;margin:0}
-.hero.has-photo{padding-top:88px}
-.home-rule{max-width:820px;margin:0 auto}
-.articles{max-width:820px;margin:0 auto;padding:72px 28px 48px}
-.sec{font-family:'IBM Plex Sans',sans-serif;font-weight:500;font-size:14px;
-  letter-spacing:0.01em;color:var(--faint)}
-.list{border-top:1px solid var(--line);margin-top:24px}
-a.item{display:block;text-decoration:none;color:inherit;border-bottom:1px solid var(--line);
-  padding:36px 0;transition:padding-left .15s ease}
-a.item:hover{padding-left:8px}
-a.item h3{font-family:'IBM Plex Serif',serif;font-weight:400;font-size:24px;margin-bottom:8px}
-a.item p{font-size:17px;color:var(--muted);max-width:60ch;margin-bottom:0}
-a.item .go{font-size:14px;font-weight:500;letter-spacing:0.01em;color:var(--ink);
-  margin-top:12px;display:inline-block;border-bottom:1px solid var(--ink);padding-bottom:2px}
-.home-cta{max-width:820px;margin:64px auto 0;padding:0 28px}
-.home-foot{max-width:820px;margin:0 auto;padding:0 28px 64px}
+footer.site-foot{text-align:center;padding:110px 32px 90px;color:var(--faint);
+  font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;line-height:2.4}
+footer.site-foot a{border-bottom:1px solid var(--faint);padding-bottom:3px;transition:opacity .4s ease}
+footer.site-foot a:hover{opacity:.55}
+"""
+CSS += """
+/* ---------- article ---------- */
+.a-head{max-width:820px;margin:0 auto;padding:130px 32px 90px;text-align:center}
+.a-head .eyebrow{margin-bottom:32px}
+.a-head h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;
+  font-size:52px;line-height:1.16;margin-bottom:28px}
+.a-head .lede{font-size:17.5px;line-height:1.75;color:var(--muted);max-width:54ch;margin:0 auto}
+.a-body{max-width:640px;margin:0 auto;padding:96px 28px 40px}
+.a-body h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;
+  font-size:31px;line-height:1.25;margin:104px 0 24px}
+.a-body h2 .step-label{display:block;font-family:'IBM Plex Sans',sans-serif;font-weight:500;
+  font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--faint);margin-bottom:16px}
+.a-body p{margin-bottom:24px;color:var(--body)}
+.say{margin:56px 0}
+.say .say-label{display:block;font-family:'IBM Plex Sans',sans-serif;font-weight:500;
+  font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--faint);margin-bottom:20px}
+.say p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400;
+  font-size:23px;line-height:1.55;color:var(--ink);margin:0}
+.takeaway{margin:110px 0 0}
+.takeaway .eyebrow{margin-bottom:30px}
+.takeaway ul{list-style:none}
+.takeaway li{position:relative;padding-left:26px;margin-bottom:14px;font-size:15.5px;color:var(--body)}
+.takeaway li:before{content:"";position:absolute;left:0;top:14px;width:10px;height:1px;background:var(--faint)}
+.a-cta{text-align:center;margin:130px 0 0}
+.a-cta .eyebrow{margin-bottom:30px}
+.a-cta h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:36px;
+  line-height:1.2;margin-bottom:18px}
+.a-cta p{font-size:16px;color:var(--muted);max-width:52ch;margin:0 auto 34px}
+.a-rel{text-align:center;margin:120px 0 0}
+.a-rel .eyebrow{margin-bottom:34px}
+.a-rel a{display:block;padding:26px 0;transition:opacity .4s ease}
+.a-rel a:hover{opacity:.55}
+.a-rel a+.a-rel a{border-top:1px solid var(--line)}
+.a-rel h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:23px;line-height:1.3}
+.a-foot{max-width:640px;margin:110px auto 0;padding:0 28px 80px;text-align:center;
+  color:var(--faint);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;line-height:2.4}
+.a-foot a{border-bottom:1px solid var(--faint);padding-bottom:3px;transition:opacity .4s ease}
+.a-foot a:hover{opacity:.55}
 
-@media(max-width:600px){
-  body{font-size:18px}
-  h1{font-size:34px}
-  .hero h1{font-size:40px}
-  .lede{font-size:20px}
-  .hero .sub{font-size:19px}
-  .wrap{padding:56px 22px 80px}
-  .hero{padding:64px 22px 44px}
-  .cta{padding:44px 0 4px}
-  a.item{padding:28px 0}
+/* ---------- phone ---------- */
+@media(max-width:640px){
+  body{font-size:16px}
+  .masthead{padding:24px 20px 20px}
+  .mast-inner{grid-template-columns:1fr;row-gap:14px}
+  .brand{grid-column:1;justify-self:center;font-size:13px;letter-spacing:.26em}
+  .mnav{font-size:9.5px;letter-spacing:.2em}
+  .mnav.l{grid-column:1;grid-row:2;justify-self:start}
+  .mnav.r{grid-column:1;grid-row:2;justify-self:end}
+  .hero{min-height:480px}
+  .hero-cap h1{font-size:37px}
+  .hero-cap .sub{font-size:15px}
+  .bleed img{height:56vh}
+  .section,.end-note{padding:92px 22px}
+  .section h2.big{font-size:33px}
+  .end-note h2{font-size:32px}
+  .note{padding:56px 0}
+  .note h3{font-size:26px}
+  .a-head{padding:88px 22px 60px}
+  .a-head h1{font-size:36px}
+  .a-body{padding:64px 22px 20px}
+  .a-body h2{font-size:26px;margin:76px 0 20px}
+  .say p{font-size:20px}
+  .a-cta h3{font-size:29px}
+  footer.site-foot{padding:76px 22px 64px}
 }
 """
 
@@ -146,51 +188,72 @@ HEAD = '''<!DOCTYPE html>
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>{css}</style>
+<script type="application/ld+json">{schema}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="masthead"><div class="masthead-inner">
+<script>document.documentElement.className+=' js';
+addEventListener('DOMContentLoaded',function(){{
+  var io=new IntersectionObserver(function(es){{es.forEach(function(e){{
+    if(e.isIntersecting){{e.target.classList.add('in');io.unobserve(e.target)}}}})}},{{threshold:.12}});
+  document.querySelectorAll('.reveal').forEach(function(el){{io.observe(el)}})}});</script>
+'''
+
+def mast(over=False):
+    cls="masthead over" if over else "masthead"
+    return f'''<div class="{cls}"><div class="mast-inner">
+  <a class="mnav l" href="index.html#notes">Field notes</a>
   <a class="brand" href="index.html">The Guest Relations System</a>
-  <a class="nav" href="index.html">All field notes</a>
+  <a class="mnav r" href="{BUY}">Get the pack</a>
 </div></div>
 '''
 
-ART = '''<article class="wrap" id="main">
-  <p class="eyebrow">Field Notes</p>
+ART = '''<header class="a-head" id="main">
+  <p class="eyebrow">Field notes</p>
   <h1>{h1}</h1>
-  <p class="lede">{lede1}</p>
-  <p class="lede-2">{lede2}</p>
-  <div class="rule"></div>
+  <p class="lede">{lede1} {lede2}</p>
+</header>
+<figure class="bleed"><img src="{img}" alt="{alt}"></figure>
+<article class="a-body">
 {body}
-  <div class="takeaway">
+  <div class="takeaway reveal">
     <p class="eyebrow">In short</p>
     <ul>{takeaway}</ul>
   </div>
-  <section class="cta">
+  <section class="a-cta reveal">
     <p class="eyebrow">From the full system</p>
     <h3>{cta_h}</h3>
     <p>{cta_p}</p>
-    <a class="btn" href="{BUY}">Get the full pack</a>
+    <a class="tlink" href="{BUY}">Get the full pack</a>
   </section>
-  <section class="related">
+  <section class="a-rel reveal">
     <p class="eyebrow">Read next</p>
 {related}
   </section>
-  <footer>The Guest Relations System &middot; Written for hotels, clubs, and restaurants. &middot; <a href="index.html">All field notes</a></footer>
 </article>
+<footer class="a-foot">The Guest Relations System &middot; Written for hotels, clubs, and restaurants<br><a href="index.html">All field notes</a></footer>
 </body>
 </html>'''
 
 def sec(label, head, paras):
-    out = f'  <h2><span class="step-label">{label}</span>{head}</h2>\n'
+    out = f'  <h2 class="reveal"><span class="step-label">{label}</span>{head}</h2>\n'
     for p in paras:
         if p.startswith("SCRIPT:"):
-            out += f'  <div class="script"><span class="script-label">What to say</span>{p[7:]}</div>\n'
+            out += f'  <div class="say reveal"><span class="say-label">What to say</span><p>{p[7:]}</p></div>\n'
         else:
             out += f'  <p>{p}</p>\n'
     return out
+
+# Calm, empty photography. One slow image per section, no people.
+ART_IMG = {
+ "no-show-guests":     ("art-no-show.jpg","An empty table for two by a tall window in a quiet dining room"),
+ "difficult-guest":    ("art-difficult.jpg","A quiet, empty hotel bar counter at dusk"),
+ "service-recovery":   ("art-recovery.jpg","A ceramic teapot and cup on a stone tray in soft morning light"),
+ "reply-to-bad-review":("art-review.jpg","A writing desk with paper and pen beside a window"),
+ "guest-recognition":  ("art-recognition.jpg","Folded linen and a small vase on a bed in a serene hotel room"),
+}
 
 P = {}
 
@@ -215,7 +278,7 @@ b += sec("Every time","Keep the record",[
 P["no-show-guests"]=dict(
  title="How to Handle a Guest No-Show (A Calm, Repeatable Process)",
  meta="A step by step way to handle guest no-shows without losing money or goodwill: the pre-arrival confirmation, the hold window, the follow-up message, and the record you keep.",
- h1="How to Handle a Guest No-Show",
+ h1="How to handle a guest no-show",
  lede1="A no-show costs you a table, a room, or a booking you could have given to someone else. Handled badly, it also costs you the guest.",
  lede2="Here is a calm, repeatable way to deal with one, so the same situation never catches your team off guard twice.",
  body=b,
@@ -244,7 +307,7 @@ b += sec("Never","Take it home",[
 P["difficult-guest"]=dict(
  title="How to Handle a Difficult Guest (Without Losing the Room)",
  meta="A calm, repeatable way to handle an upset or difficult guest: let them finish, name the problem back, fix the thing rather than the feeling, and keep your team steady.",
- h1="How to Handle a Difficult Guest",
+ h1="How to handle a difficult guest",
  lede1="A difficult guest is not a threat. Handled well, they are often your most loyal guest afterwards, because you were the one who stayed calm.",
  lede2="Here is a steady, repeatable way through it, so you never improvise under pressure.",
  body=b,
@@ -273,7 +336,7 @@ b += sec("After","Write it down",[
 P["service-recovery"]=dict(
  title="Service Recovery: How to Fix a Bad Guest Experience",
  meta="A simple service recovery process for hospitality: own it, fix it, follow up, and match the gesture to the mistake without giving away the venue.",
- h1="How to Recover a Guest After Something Goes Wrong",
+ h1="How to recover a guest after something goes wrong",
  lede1="Things go wrong in every venue. What separates the good ones is not that they never slip, it is what they do in the ninety seconds afterwards.",
  lede2="Here is the recovery process, plainly, so anyone on your team can run it.",
  body=b,
@@ -302,7 +365,7 @@ b += sec("Then","Fix the pattern",[
 P["reply-to-bad-review"]=dict(
  title="How to Reply to a Bad Google Review (Restaurants and Venues)",
  meta="How to respond to a negative Google review the right way: write for future readers, thank and acknowledge without arguing, and take the conversation offline.",
- h1="How to Reply to a Bad Google Review",
+ h1="How to reply to a bad Google review",
  lede1="A bad review feels personal. But your reply is not really to the reviewer, it is to every future guest reading it before they decide to book.",
  lede2="Here is how to answer one so it works in your favour.",
  body=b,
@@ -331,7 +394,7 @@ b += sec("The point","Loyalty is built, not bought",[
 P["guest-recognition"]=dict(
  title="Guest Recognition: How to Remember Regulars and Special Occasions",
  meta="A simple system for guest recognition in hospitality: record the small things, greet regulars by name and preference, and catch birthdays and anniversaries.",
- h1="How to Remember Your Regulars",
+ h1="How to remember your regulars",
  lede1="The guest who feels known does not compare you on price. Recognition is the cheapest loyalty you will ever build, and most venues leave it on the table.",
  lede2="Here is how to turn being remembered into a system, not a lucky habit.",
  body=b,
@@ -341,7 +404,7 @@ P["guest-recognition"]=dict(
            "Flag birthdays and anniversaries in advance, never on the night.",
            "Recognition buys attachment where discounts only buy visits."],
  cta_h="This is one of 39 templates.",
- cta_p="The full library includes the guest record and occasion messages in full. They are part of the 39 ready to edit guest messages in the Guest Relations System.",
+ cta_p="The full library includes the recognition and occasion messages in full. They are part of the 39 ready to edit guest messages in the Guest Relations System.",
  nav="How to remember your regulars")
 
 import json
@@ -355,48 +418,55 @@ for slug,d in P.items():
       "description":d["meta"],
       "publisher":{"@type":"Organization","name":"The Guest Relations System"}
     })
+    img,alt=ART_IMG[slug]
     html=HEAD.format(title=d["title"],meta=d["meta"],site=SITE,slug=slug+".html",
                      ogtype="article",schema=schema,css=CSS)
-    html+=ART.format(h1=d["h1"],lede1=d["lede1"],lede2=d["lede2"],body=d["body"],
-                     takeaway=tk,cta_h=d["cta_h"],cta_p=d["cta_p"],related=rel,BUY=BUY)
+    html+=mast()+ART.format(h1=d["h1"],lede1=d["lede1"],lede2=d["lede2"],body=d["body"],
+                     takeaway=tk,cta_h=d["cta_h"],cta_p=d["cta_p"],related=rel,BUY=BUY,
+                     img=img,alt=alt)
     open(f"{OUT}/{slug}.html","w").write(html)
     print("wrote",slug)
 
 # ---- home ----
-items="".join(f'''    <a class="item" href="{s}.html">
-      <h3>{P[s]["nav"]}</h3>
-      <p>{P[s]["meta"]}</p>
-      <span class="go">Read more</span>
-    </a>\n''' for s in order)
+notes="".join(f'''    <div class="note reveal">
+      <a href="{s}.html">
+        <h3>{P[s]["nav"]}</h3>
+        <p>{P[s]["meta"]}</p>
+        <span class="tlink">Read more</span>
+      </a>
+    </div>\n''' for s in order)
 hschema=json.dumps({"@context":"https://schema.org","@type":"WebSite",
   "name":"The Guest Relations System","url":SITE})
-hero_photo=f'<img class="hero-photo" src="{HERO_PHOTO}" alt="A calm, empty hotel lounge">\n' if HERO_PHOTO else ""
-hero_cls=" has-photo" if HERO_PHOTO else ""
 home=HEAD.format(title="The Guest Relations System — Hospitality Scripts and Procedures",
  meta="A complete set of guest relations scripts and procedures for hotels, clubs, and restaurants. Handle no-shows, difficult guests, recovery, reviews, and recognition with a system your team can follow.",
  site=SITE,slug="",ogtype="website",schema=hschema,css=CSS)
-home+=f'''{hero_photo}<div class="hero{hero_cls}" id="main">
-  <p class="eyebrow">For hotels, clubs, and restaurants</p>
-  <h1>The difference is how you handle the moment.</h1>
-  <p class="sub">A complete set of guest relations scripts and procedures your team can follow, drawn from a system built and run inside a working venue. No theory. Just what to say and do when it matters.</p>
-  <a class="btn btn-solid" href="{BUY}">Get the full pack</a>
-  <p class="trust">39 templates &middot; One download &middot; No subscription</p>
-</div>
-<div style="padding:0 28px"><div class="home-rule"><div class="rule" style="margin:0"></div></div></div>
-<section class="articles">
-  <p class="sec">Field Notes</p>
-  <div class="list">
-{items}  </div>
+home+=mast(over=True)+f'''<figure class="hero">
+  <img src="hero.jpg" alt="A calm, empty hotel lounge with soft morning light">
+  <figcaption class="hero-cap">
+    <p class="eyebrow">For hotels, clubs, and restaurants</p>
+    <h1>The difference is how you handle the moment.</h1>
+    <p class="sub">A complete set of guest relations scripts and procedures your team can follow, drawn from a system built and run inside a working venue. No theory. Just what to say and do when it matters.</p>
+    <a class="tlink" href="{BUY}">Get the full pack</a>
+    <p class="trust">39 templates &middot; One download &middot; No subscription</p>
+  </figcaption>
+  <div class="scroll-cue">Scroll</div>
+</figure>
+<section class="section" id="notes">
+  <p class="eyebrow">Field notes</p>
+  <h2 class="big">Quiet systems for loud moments.</h2>
+  <p class="lead">Short field notes from the floor, each one a calm, repeatable way through a situation every venue meets.</p>
+  <div class="notes-list">
+{notes}  </div>
 </section>
-<div class="home-cta">
-  <div class="cta">
-    <p class="eyebrow">The complete system</p>
-    <h3>39 templates. One download.</h3>
-    <p>Everything above is a small taste. The full library covers the guest record, recovery, no-shows, difficult guests, recognition, written responses, special occasions, and more: 39 ready to edit messages to drop straight into your venue.</p>
-    <a class="btn" href="{BUY}">Get the full pack</a>
-  </div>
-</div>
-<div class="home-foot"><footer>The Guest Relations System &middot; Written for hotels, clubs, and restaurants.</footer></div>
+<figure class="bleed reveal"><img src="home-mid.jpg" alt="A still reflecting pool in a quiet resort courtyard at dawn"></figure>
+<section class="end-note" id="system">
+  <p class="eyebrow">The complete system</p>
+  <h2>39 templates. One download.</h2>
+  <p>Everything above is a small taste. The full library covers bookings and no-shows, recovery, review replies, recognition and special occasions, VIP and concierge outreach, and the difficult messages: 39 ready to edit templates to drop straight into your venue.</p>
+  <a class="tlink" href="{BUY}">Get the full pack</a>
+</section>
+<figure class="bleed reveal"><img src="home-cta.jpg" alt="A misty stone garden path at dawn"></figure>
+<footer class="site-foot">The Guest Relations System<br>Written for hotels, clubs, and restaurants</footer>
 </body></html>'''
 open(f"{OUT}/index.html","w").write(home)
 print("wrote index")
@@ -411,7 +481,6 @@ open(f"{OUT}/robots.txt","w").write(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}
 # so the two can never disagree; editing SITE alone is enough.
 open(f"{OUT}/CNAME","w").write(SITE.split("://",1)[1].rstrip("/")+"\n")
 print("wrote sitemap, robots")
-
 # Favicons: a quiet serif monogram on cream. Generated inside the build so
 # the deploy runner needs no extra tools; the ICO and PNG bytes are embedded.
 import base64 as _b64
