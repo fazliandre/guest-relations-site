@@ -34,6 +34,7 @@ img{display:block}
 .masthead{position:relative;z-index:5;padding:calc(44px + env(safe-area-inset-top,0px)) calc(32px + env(safe-area-inset-right,0px)) 32px calc(32px + env(safe-area-inset-left,0px))}
 .masthead.over{position:absolute;top:0;left:0;right:0;color:#fff}
 .mast-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+.mast-inner.bare{display:flex;justify-content:center}
 .brand{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:16px;
   letter-spacing:.32em;text-transform:uppercase;white-space:nowrap;text-align:center;
   transition:opacity .4s ease}
@@ -50,6 +51,7 @@ img{display:block}
   border-bottom:1px solid var(--ink);transition:opacity .4s ease}
 .tlink:hover{opacity:.55}
 .masthead.over .tlink,.hero-cap .tlink{color:#fff;border-bottom-color:rgba(255,255,255,.9)}
+.hero-cap .tlink.low{position:absolute;left:50%;bottom:11vh;transform:translateX(-50%)}
 
 .eyebrow{font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--faint)}
 .serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300}
@@ -69,7 +71,7 @@ CSS += """
   align-items:center;justify-content:center;text-align:center;color:#fff;padding:0 24px}
 .hero-cap .eyebrow{color:rgba(255,255,255,.8);margin-bottom:40px}
 .hero-cap h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;
-  font-size:52px;line-height:1.24;max-width:18ch;margin-bottom:36px}
+  font-size:52px;line-height:1.24;max-width:18ch;margin-bottom:56px}
 .hero-cap .sub{font-size:15.5px;line-height:1.85;color:rgba(255,255,255,.85);max-width:46ch;margin-bottom:50px}
 
 /* ---------- full-bleed section images ---------- */
@@ -210,8 +212,13 @@ addEventListener('DOMContentLoaded',function(){{
   document.querySelectorAll('.reveal').forEach(function(el){{io.observe(el)}})}});</script>
 '''
 
-def mast(over=False):
+def mast(over=False, nav=True):
     cls="masthead over" if over else "masthead"
+    if not nav:
+        return f'''<div class="{cls}"><div class="mast-inner bare">
+  <a class="brand" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="butt"><path d="M19 36a13 13 0 0 1 26 0" stroke-width="2.4"/><line x1="6" y1="36" x2="58" y2="36" stroke-width="2"/><line x1="16.5" y1="40.6" x2="47.5" y2="40.6" stroke-width="1.6" opacity=".75"/></g></svg>The Guest Relations System</a>
+</div></div>
+'''
     return f'''<div class="{cls}"><div class="mast-inner">
   <a class="mnav l" href="index.html#notes">Field notes</a>
   <a class="brand" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="butt"><path d="M19 36a13 13 0 0 1 26 0" stroke-width="2.4"/><line x1="6" y1="36" x2="58" y2="36" stroke-width="2"/><line x1="16.5" y1="40.6" x2="47.5" y2="40.6" stroke-width="1.6" opacity=".75"/></g></svg>The Guest Relations System</a>
@@ -451,13 +458,11 @@ home=HEAD.format(title="The Guest Relations System — Hospitality Scripts and P
  meta="A complete set of guest relations scripts and procedures for hotels, clubs, and restaurants. Handle no-shows, difficult guests, recovery, reviews, and recognition with a system your team can follow.",
  site=SITE,slug="",ogtype="website",schema=hschema,css=CSS,
  themecolor="#72675b",edge="html,body{background:#72675b}.section,.end-note,footer.site-foot{background:var(--paper)}.section,.end-note{box-shadow:0 0 0 100vmax var(--paper);clip-path:inset(0 -100vmax)}")
-home+=mast(over=True)+f'''<div class="hero-bg" aria-hidden="true"><img src="hero.jpg" alt=""></div>
+home+=mast(over=True, nav=False)+f'''<div class="hero-bg" aria-hidden="true"><img src="hero.jpg" alt=""></div>
 <figure class="hero">
   <figcaption class="hero-cap">
-    <p class="eyebrow">For hotels, clubs, and restaurants</p>
     <h1>The difference is how you handle the moment.</h1>
-    <p class="sub">A complete set of guest relations scripts and procedures your team can follow, drawn from a system built and run inside a working venue. No theory. Just what to say and do when it matters.</p>
-    <a class="tlink" href="{BUY}">Get the full pack</a>
+    <a class="tlink low" href="{BUY}">Get the full pack</a>
   </figcaption>
 </figure>
 <section class="section" id="notes">
