@@ -186,11 +186,11 @@ HEAD = '''<!DOCTYPE html>
 <meta property="og:description" content="{meta}">
 <meta property="og:url" content="{site}/{slug}">
 <meta property="og:site_name" content="The Guest Relations System">
-<meta property="og:image" content="{site}/og-image.jpg">
+<meta property="og:image" content="{site}/og-card.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="{site}/og-image.jpg">
+<meta name="twitter:image" content="{site}/og-card.jpg">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
