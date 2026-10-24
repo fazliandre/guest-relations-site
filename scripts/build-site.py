@@ -281,8 +281,8 @@ b  = sec("Before they arrive","Confirm, do not just remind",[
  "A guest who is no longer coming will often tell you now, while you can still fill the space. That single reply is worth more than any fee."])
 b += sec("On the day","Hold the window, then release it",[
  "Decide in advance how long you hold a booking past its start time. Fifteen minutes is common for a table, longer for a room. The point is that the number is agreed before the moment arrives, so no one is improvising while other guests wait.",
- "During that window, try to reach them once, warmly. Something has usually gone wrong on their side, and a call often turns a no-show back into a late arrival.",
- "SCRIPT:Hello [Name], we have your table ready and wanted to check you are on your way. No rush at all, we just want to make sure it is here for you.",
+ "During that window, try to reach them once, warmly. Something has usually gone wrong on their side, and a call often turns a no-show back into a late arrival. Mention the hold window in that message, so the welcome stays warm but the limit is clear.",
+ "SCRIPT:Hello [Name], we have your table ready and wanted to check you are on your way. We hold tables for [hold window] after the reservation time, so please let us know when to expect you.",
  "If the window passes with no answer, release the space. You have done the considerate thing, and holding it longer only punishes the guests who did turn up."])
 b += sec("Afterwards","Follow up without blame",[
  "How you handle the day after decides whether this guest ever comes back. Resist the urge to make them feel bad. Most people already know they missed something, and a warm door is far more valuable than being right.",
