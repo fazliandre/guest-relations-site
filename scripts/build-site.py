@@ -289,8 +289,7 @@ b += sec("Afterwards","Follow up without blame",[
  "SCRIPT:Hello [Name], we missed you [today / yesterday] and hope everything is well. Whenever you would like to come in, we would be glad to have you. Just let us know and we will take care of the rest.",
  "This costs you nothing and quietly does two things: it recovers a guest who felt awkward, and it makes clear that you noticed, without ever scolding them."])
 b += sec("Every time","Keep the record",[
- "Note it on the guest's profile: the no-show, the reason if you learned one, and whether you reached them. One missed booking is nothing. A pattern tells you whether to take a deposit next time, and whether it was ever really about this guest at all.",
- "A no-show your team handles this way is not a loss. It is a chance to look organised, considerate, and hard to leave."])
+ "Note it on the guest's profile: the no-show, the reason if you learned one, and whether you reached them. One missed booking is nothing. A pattern tells you whether to take a deposit next time, and whether it was ever really about this guest at all."])
 P["no-show-guests"]=dict(
  title="How to Handle a Guest No-Show (A Calm, Repeatable Process)",
  meta="A step by step way to handle guest no-shows without losing money or goodwill: the pre-arrival confirmation, the hold window, the follow-up message, and the record you keep.",
@@ -319,7 +318,7 @@ b += sec("Now","Fix the thing, not the feeling",[
  "Once they are calm, solve the real problem plainly. Do not over-apologise and do not pile on gestures out of panic. A clear, quick fix reads as competence. A flustered heap of free items reads as guilt.",
  "If you do offer something, make it fit the mistake. A slow drink is a fresh drink, not a free meal. Matching the gesture to the wrong keeps you generous without being taken advantage of."])
 b += sec("Never","Take it home",[
- "Some guests are simply having a bad day and you are the nearest target. Handle it with grace, note it if it becomes a pattern, and then let it go. Your team watches how you carry these moments, and calm is contagious."])
+ "Some guests are simply having a bad day and you are the nearest target. Handle it with grace, note it if it becomes a pattern, and then let it go."])
 P["difficult-guest"]=dict(
  title="How to Handle a Difficult Guest (Without Losing the Room)",
  meta="A calm, repeatable way to handle an upset or difficult guest: let them finish, name the problem back, fix the thing rather than the feeling, and keep your team steady.",
@@ -405,7 +404,7 @@ b += sec("How","Write down the small things",[
 b += sec("When","Catch the occasions",[
  "Birthdays, anniversaries, first visits, and returns after a long gap are all moments to mark. They cost little and they are exactly what guests tell their friends about afterwards.",
  "Flag them in advance so nothing depends on someone happening to remember in the moment. A quiet card, a small gesture, a line of acknowledgement, timed right, buys years of loyalty."])
-b += sec("The point","Loyalty is built, not bought",[
+b += sec("The point","Recognising regular guests",[
  "Discount schemes buy visits. Recognition buys attachment. A guest who feels known does not shop around on price, because no one else knows them the way you do. That is the cheapest and strongest hold a venue can have."])
 P["guest-recognition"]=dict(
  title="Guest Recognition: How to Remember Regulars and Special Occasions",
@@ -467,7 +466,7 @@ home+=mast(over=True, nav=False)+f'''<div class="hero-bg" aria-hidden="true"><im
 </figure>
 <section class="section" id="notes">
   <p class="eyebrow">Field notes</p>
-  <h2 class="big">Quiet systems for loud moments.</h2>
+  <h2 class="big">Guest relations guides</h2>
   <p class="lead">Short field notes from the floor, each one a calm, repeatable way through a situation every venue meets.</p>
   <div class="notes-list">
 {notes}  </div>
